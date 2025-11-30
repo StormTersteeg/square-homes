@@ -6,7 +6,7 @@ export default class ListingStore extends BaseStore<Listing> {
     {
       id: "e25b8",
       price: 150000,
-      address: "Snow Street 1a\n1st Christmas Island\nAxo 1.21.1",
+      address: "Snow Street 1a\n1st Christmas Island\nAXO 1.21.1",
       name: "Snow Home",
       description:
         "Welcome to your private floating island sanctuary, where minimalist design meets unreal sky-high views. This modern Minecraft home is built directly into a suspended landmass, giving you total privacy, zero neighbors, and panoramic cloud-level scenery that hits different at sunrise and sunset.\n\nCarved directly into a pristine snowy hill, this home blends seamlessly with the frozen landscape while still standing out with bold, modern geometry. The crisp white exterior mirrors the surrounding snow, creating a smooth, sculpted look that feels both natural and futuristic. Large inset windows cut through the hillside, flooding the interior with soft daylight while framing breathtaking sky-high views from your floating island perch.\n\nThe bedroom is a true skybox dream—flooded with natural light through expansive windows, offering an uninterrupted view of the open sky while you respawn in peace. A lower level adds utility with additional storage, armor stands, and ladder access for extra security.\n\nPerfect for: Survival sky-base players, modern builders, content creators, and anyone who wants to live above the world—literally.",
@@ -32,7 +32,7 @@ export default class ListingStore extends BaseStore<Listing> {
     {
       id: "49a-f",
       price: 4700000,
-      address: "Lockedwood Avenue 1\nLockedwood Grounds\nAxo 1.21.1",
+      address: "Lockedwood Avenue 1\nLockedwood Grounds\nAXO 1.21.1",
       name: "Locked-Up Mansion",
       description:
         "Hidden beyond towering treetops and winding forest paths, this grand brick manor rises like a legacy carved into the world itself. From the moment you pass through the gates and hear the soft echo of water from the courtyard pools, you’ll know—you’ve arrived somewhere important.\n\nStep inside and you’re greeted by soaring halls of warm brick and carved stone, lit by chandeliers that float above long banquet tables made for feasts, councils, or celebrations that last long into the night. The entire estate breathes warmth and authority—equal parts comfort and prestige.\n\nWander deeper and you’ll discover:\n- A vast private library, stretching upward with towering shelves and quiet candlelight—perfect for study, secrets, and whispered plans.\n- Garden sanctuaries hidden indoors, where flowers grow beneath arches of stone and sunlight filters through tall windows.\n- Private water chambers and reflective pools, glowing softly beneath torchlight for quiet moments of rest.\n- Balconies above the world, offering endless views of rolling green canopies and distant skies.\n- Intimate lounges with crackling fireplaces, where the outside world truly disappears.\n- A grand church hall, complete with stained glass windows that cast colorful light across stone pews and altars.\n\nEvery corridor feels intentional. Every room tells a story. It is a seat of power, elegance, and legacy. Perfect for noble families, ruling councils, powerful scholars, or anyone who desires a home that commands respect the moment its doors open.",
@@ -71,7 +71,7 @@ export default class ListingStore extends BaseStore<Listing> {
     {
       id: "fc1-4",
       price: 1200000,
-      address: "New Heights 3a-3d\nUptown District\nAxo 1.21.1",
+      address: "New Heights 3a-3d\nUptown District\nAXO 1.21.1",
       name: "New Heights Apartments",
       description:
         "Presenting a rare full-building opportunity — all five floors, offered as one exclusive package.\n\nThis striking vertical residence rises proudly above the street, each level crafted with its own character, privacy, and purpose. From the outside alone, the façade tells a story of modern confidence and refined ambition.\n\nEach floor offers:\n- Spacious living chambers with clean lines and generous natural light\n- Private sleeping quarters framed by greenery and soft lighting\n- Quiet lounges and study areas, perfect for personal retreat or hosting\n- Kitchen space including a dedicated freezer\n\nAt the top, a rooftop balcony opens to wide skies and distant horizons.",

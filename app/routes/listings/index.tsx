@@ -1,15 +1,7 @@
 import ListingStore from "~/store/listing";
 import ListingPreview from "~/component/listingPreview";
-import type { Route } from "../../+types/root";
 import { useState, useMemo } from "react";
 import { useLocation } from "react-router";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Square Homes - Find Your Dream Property" },
-    { name: "description", content: "Your gateway to the best properties." },
-  ];
-}
 
 export default function Page() {
   const location = useLocation();

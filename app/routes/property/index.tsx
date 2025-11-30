@@ -1,17 +1,9 @@
 import { useParams } from "react-router";
-import type { Route } from "./+types";
 import ListingStore from "~/store/listing";
 import FormatPrice from "~/util/price";
 import TagElement from "~/component/tag";
 import { CgSearchLoading } from "react-icons/cg";
 import Carousel from "~/component/carousel";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Square Homes - Find Your Dream Property" },
-    { name: "description", content: "Your gateway to the best properties." },
-  ];
-}
 
 export default function Page() {
   const listingStore = new ListingStore();

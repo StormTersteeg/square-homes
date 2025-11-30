@@ -1,18 +1,6 @@
 import ListingStore from "~/store/listing";
-import type { Route } from "../../+types/root";
 import ListingPreview from "~/component/listingPreview";
 import Steps from "~/component/steps";
-import { CgMail } from "react-icons/cg";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Square homes" },
-    {
-      name: "description",
-      content: "Discover your perfect modern property with Square Homes.",
-    },
-  ];
-}
 
 export default function Page() {
   const listingStore = new ListingStore();

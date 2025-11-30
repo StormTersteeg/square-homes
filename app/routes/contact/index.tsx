@@ -1,16 +1,24 @@
 import type { Route } from "./+types";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Contact - Square Homes" },
-    { name: "description", content: "Get in touch with Square Homes." },
-  ];
-}
+const schema = z.object({
+  name: z.string().min(1, { error: "Please enter your name." }),
+  email: z.email({ error: "Please enter a valid email address." }),
+  message: z.string().min(5, { error: "Please enter a message." }),
+});
 
 export default function Page() {
   const [isSending, setIsSending] = useState(false);
   const [sent, setSent] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: zodResolver(schema) });
 
   const handleSend = () => {
     setIsSending(true);
@@ -32,36 +40,53 @@ export default function Page() {
 
           <div className="bg-gray-900 p-6 rounded mb-8 relative overflow-hidden">
             {!sent && (
-              <>
+              <form onSubmit={handleSubmit(handleSend)}>
                 <div className="mb-4">
                   <label className="block mb-1 text-sm text-gray-300">
                     Name
                   </label>
-                  <input className="w-full p-2 rounded bg-gray-800" />
+                  <input
+                    {...register("name")}
+                    className="w-full p-2 rounded bg-gray-800"
+                  />
+                  {errors.name && (
+                    <p className="text-red-500">{errors.name.message}</p>
+                  )}
                 </div>
 
                 <div className="mb-4">
                   <label className="block mb-1 text-sm text-gray-300">
                     Email
                   </label>
-                  <input className="w-full p-2 rounded bg-gray-800" />
+                  <input
+                    {...register("email")}
+                    className="w-full p-2 rounded bg-gray-800"
+                  />
+                  {errors.email && (
+                    <p className="text-red-500">{errors.email.message}</p>
+                  )}
                 </div>
 
                 <div className="mb-4">
                   <label className="block mb-1 text-sm text-gray-300">
                     Message
                   </label>
-                  <textarea className="w-full p-2 h-28 rounded bg-gray-800"></textarea>
+                  <textarea
+                    {...register("message")}
+                    className="w-full p-2 h-28 rounded bg-gray-800"
+                  ></textarea>
+                  {errors.message && (
+                    <p className="text-red-500">{errors.message.message}</p>
+                  )}
                 </div>
 
                 <button
-                  onClick={handleSend}
                   disabled={isSending}
                   className="w-full bg-blue-700 hover:bg-blue-600 transition p-2 rounded font-semibold disabled:opacity-50"
                 >
                   Send Message
                 </button>
-              </>
+              </form>
             )}
 
             {isSending && (
@@ -88,7 +113,7 @@ export default function Page() {
             <div>Square Homes HQ</div>
             <div>Lab Lane 13</div>
             <div>Science-Island</div>
-            <div>Axo 1.21.1</div>
+            <div>AXO 1.21.1</div>
           </div>
         </div>
       </div>

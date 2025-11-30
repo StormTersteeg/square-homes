@@ -1,12 +1,3 @@
-import type { Route } from "../../+types/root";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Services - Square Homes" },
-    { name: "description", content: "What Square Homes offers." },
-  ];
-}
-
 export default function Page() {
   return (
     <main>
