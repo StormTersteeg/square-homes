@@ -1,3 +1,48 @@
+interface Service {
+  title: string;
+  description: string;
+}
+
+const services: Service[] = [
+  {
+    title: "Property Listings",
+    description:
+      "Professionally curated modern homes, survival builds, and high-end bases.",
+  },
+  {
+    title: "Property Promotion",
+    description:
+      "Get your builds featured and seen by buyers across the Square Homes network.",
+  },
+  {
+    title: "Buyer Support",
+    description: "Guidance through every step of your next property purchase.",
+  },
+  {
+    title: "Seller Support",
+    description:
+      "From listing strategy to final deal, we help you sell with confidence.",
+  },
+  {
+    title: "Featured Placement",
+    description:
+      "Premium exposure on the Square Homes homepage and listings feed.",
+  },
+  {
+    title: "Private Deals",
+    description: "Exclusive off-market properties for serious buyers.",
+  },
+];
+
+function ServiceElement(service: Service) {
+  return (
+    <div className="bg-gray-900 p-6 rounded">
+      <h2 className="text-xl font-semibold mb-2">{service.title}</h2>
+      <p className="text-gray-400">{service.description}</p>
+    </div>
+  );
+}
+
 export default function Page() {
   return (
     <main>
@@ -9,50 +54,9 @@ export default function Page() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gray-900 p-6 rounded">
-              <h2 className="text-xl font-semibold mb-2">Property Listings</h2>
-              <p className="text-gray-400">
-                Professionally curated modern homes, survival builds, and
-                high-end bases.
-              </p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded">
-              <h2 className="text-xl font-semibold mb-2">Property Promotion</h2>
-              <p className="text-gray-400">
-                Get your builds featured and seen by buyers across the Square
-                Homes network.
-              </p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded">
-              <h2 className="text-xl font-semibold mb-2">Buyer Support</h2>
-              <p className="text-gray-400">
-                Guidance through every step of your next property purchase.
-              </p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded">
-              <h2 className="text-xl font-semibold mb-2">Seller Support</h2>
-              <p className="text-gray-400">
-                From listing strategy to final deal, we help you sell with
-                confidence.
-              </p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded">
-              <h2 className="text-xl font-semibold mb-2">Featured Placement</h2>
-              <p className="text-gray-400">
-                Premium exposure on the Square Homes homepage and listings feed.
-              </p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded">
-              <h2 className="text-xl font-semibold mb-2">Private Deals</h2>
-              <p className="text-gray-400">
-                Exclusive off-market properties for serious buyers.
-              </p>
-            </div>
+            {services.map((service: Service) => (
+              <ServiceElement {...service} />
+            ))}
           </div>
         </div>
       </div>
