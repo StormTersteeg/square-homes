@@ -10,6 +10,7 @@ export default function Navbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to="/"
+          onClick={() => setIsOpen(false)}
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img src="/icon.png" className="h-7" alt="Square Homes" />
@@ -70,6 +71,7 @@ export default function Navbar() {
           <ul className="flex flex-col md:p-0 mt-4 font-medium rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary w-full md:w-auto">
             <li>
               <Link
+                onClick={() => setIsOpen(false)}
                 to="/"
                 className="block py-2 px-1 text-white bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0"
                 aria-current="page"
@@ -80,6 +82,7 @@ export default function Navbar() {
 
             <li>
               <Link
+                onClick={() => setIsOpen(false)}
                 to="/properties"
                 className="block py-2 px-1 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
@@ -89,6 +92,7 @@ export default function Navbar() {
 
             <li>
               <Link
+                onClick={() => setIsOpen(false)}
                 to="/services"
                 className="block py-2 px-1 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
@@ -98,6 +102,7 @@ export default function Navbar() {
 
             <li>
               <Link
+                onClick={() => setIsOpen(false)}
                 to="/contact"
                 className="block py-2 px-1 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >

@@ -54,8 +54,8 @@ export default function Page() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map((service: Service) => (
-              <ServiceElement {...service} />
+            {services.map((service: Service, index: number) => (
+              <ServiceElement key={index} {...service} />
             ))}
           </div>
         </div>

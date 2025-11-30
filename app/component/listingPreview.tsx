@@ -7,7 +7,7 @@ export default function ListingPreview(listing: Listing) {
   return (
     <Link
       to={
-        "./property/" +
+        "/property/" +
         listing.id +
         "/" +
         listing.name.toLowerCase().replaceAll(" ", "-")
