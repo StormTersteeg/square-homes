@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import ListingStore from "~/store/listing";
 import FormatPrice from "~/util/price";
 import TagElement from "~/component/tag";
@@ -17,9 +17,9 @@ export default function Page() {
         <div className="mt-6 ml-5">
           Could not find that property, view our other properties instead.
           <br />
-          <a href="/listings" className="text-blue-500 hover:underline">
+          <Link to="/listings" className="text-blue-500 hover:underline">
             View Listings
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -32,12 +32,12 @@ export default function Page() {
       <div className="container mx-auto mt-18 sm:mt-26 pb-5">
         <div className="pt-5 p-6 mb-5 bg-gray-900 rounded">
           <h1 className="text-2xl font-bold mb-4">
-            <a
-              href="/properties"
+            <Link
+              to="/properties"
               className="text-blue-500 hover:underline mr-3"
             >
               &larr;
-            </a>
+            </Link>
             {listing.name}
           </h1>
           <div className="flex flex-wrap -mx-2">

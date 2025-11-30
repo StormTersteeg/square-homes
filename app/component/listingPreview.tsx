@@ -1,11 +1,12 @@
 import type Listing from "~/model/type/listing";
 import FormatPrice from "~/util/price";
 import TagElement from "./tag";
+import { Link } from "react-router";
 
 export default function ListingPreview(listing: Listing) {
   return (
-    <a
-      href={
+    <Link
+      to={
         "./property/" +
         listing.id +
         "/" +
@@ -45,6 +46,6 @@ export default function ListingPreview(listing: Listing) {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

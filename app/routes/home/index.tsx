@@ -1,6 +1,7 @@
 import ListingStore from "~/store/listing";
 import ListingPreview from "~/component/listingPreview";
 import Steps from "~/component/steps";
+import { Link } from "react-router";
 
 export default function Page() {
   const listingStore = new ListingStore();
@@ -35,18 +36,18 @@ export default function Page() {
         <ListingPreview {...randomListing} />
 
         <div className="flex justify-center mt-10 space-x-4">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
           >
             Contact Us
-          </a>
-          <a
-            href="/services"
+          </Link>
+          <Link
+            to="/services"
             className="px-6 py-3 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition"
           >
             Our Services
-          </a>
+          </Link>
         </div>
       </div>
     </main>

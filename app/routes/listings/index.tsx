@@ -59,7 +59,7 @@ export default function Page() {
   return (
     <main>
       <div className="container mx-auto mt-18 sm:mt-26 pb-10 min-h-[calc(100dvh-8rem)]">
-        <div className="flex justify-center mb-0 sm:mb-5">
+        <div className="flex justify-center flex-wrap mb-0 sm:mb-5">
           <input
             value={searchQuery}
             type="text"
@@ -70,7 +70,7 @@ export default function Page() {
               setSearchQuery(value);
             }}
           />
-          <div className="flex items-center">
+          <div className="flex w-full items-center">
             <input
               type="number"
               placeholder="Min price"

@@ -1,17 +1,22 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="bg-gray-900/66 backdrop-blur-md fixed w-full z-20 top-0 start-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link
+          to="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <img src="/icon.png" className="h-7" alt="Square Homes" />
           <span className="self-center text-xl text-heading font-semibold whitespace-nowrap">
             Square homes
           </span>
-        </a>
+        </Link>
 
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <input
@@ -22,8 +27,9 @@ export default function Navbar() {
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.keyCode === 13) {
                 const target = e.target as HTMLInputElement;
-                window.location.href =
-                  "/properties?search=" + encodeURIComponent(target.value);
+                navigate(
+                  "/properties?search=" + encodeURIComponent(target.value)
+                );
               }
             }}
           />
@@ -63,40 +69,40 @@ export default function Navbar() {
         >
           <ul className="flex flex-col md:p-0 mt-4 font-medium rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary w-full md:w-auto">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="block py-2 px-1 text-white bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0"
                 aria-current="page"
               >
                 Home
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="/properties"
+              <Link
+                to="/properties"
                 className="block py-2 px-1 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
                 Listings
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="/services"
+              <Link
+                to="/services"
                 className="block py-2 px-1 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
                 Services
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="block py-2 px-1 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
                 Contact
-              </a>
+              </Link>
             </li>
 
             <li className="mt-3 md:hidden w-full">
