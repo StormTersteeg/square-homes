@@ -2,6 +2,7 @@ import ListingStore from "~/store/listing";
 import type { Route } from "../../+types/root";
 import ListingPreview from "~/component/listingPreview";
 import Steps from "~/component/steps";
+import { CgMail } from "react-icons/cg";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -22,7 +23,7 @@ export default function Page() {
 
   return (
     <main>
-      <div className="container mx-auto mt-26 pb-10 min-h-[calc(100vh-10rem)]">
+      <div className="container mx-auto mt-26 pb-10 min-h-[calc(100dvh-10rem)]">
         <div className="pt-5 p-4">
           <h1 className="text-4xl text-center font-bold mb-5">Square Homes</h1>
           <Steps />

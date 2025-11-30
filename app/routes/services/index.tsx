@@ -10,7 +10,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Page() {
   return (
     <main>
-      <div className="container mx-auto mt-26 pb-10 min-h-[calc(100vh-10rem)]">
+      <div className="container mx-auto mt-26 pb-10 min-h-[calc(100dvh-10rem)]">
         <div className="p-4 max-w-5xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-4">Our Services</h1>
           <p className="text-center text-gray-400 mb-10">

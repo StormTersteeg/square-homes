@@ -77,6 +77,11 @@ export default class ListingStore extends BaseStore<Listing> {
         "Presenting a rare full-building opportunity — all five floors, offered as one exclusive package.\n\nThis striking vertical residence rises proudly above the street, each level crafted with its own character, privacy, and purpose. From the outside alone, the façade tells a story of modern confidence and refined ambition.\n\nEach floor offers:\n- Spacious living chambers with clean lines and generous natural light\n- Private sleeping quarters framed by greenery and soft lighting\n- Quiet lounges and study areas, perfect for personal retreat or hosting\n- Kitchen space including a dedicated freezer\n\nAt the top, a rooftop balcony opens to wide skies and distant horizons.",
       thumbnail: "0.png",
       images: ["0.png", "1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
+      tags: [
+        { type: "floors", amount: 5 },
+        { type: "rooms", amount: 5 },
+        { type: "balconies", amount: 2 },
+      ],
     },
   ];
 

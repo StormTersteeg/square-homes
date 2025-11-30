@@ -51,13 +51,13 @@ export default function Page() {
 
   return (
     <main>
-      <div className="container mx-auto mt-18 sm:mt-26 pb-10 min-h-[calc(100vh-8rem)]">
+      <div className="container mx-auto mt-18 sm:mt-26 pb-10 min-h-[calc(100dvh-8rem)]">
         <div className="flex justify-center mb-0 sm:mb-5">
           <input
             value={searchQuery}
             type="text"
             placeholder="Search listings..."
-            className="p-3 w-full rounded-none sm:rounded bg-gray-900"
+            className="p-3 w-full rounded-none sm:rounded-l bg-gray-900"
             onChange={(e) => {
               const value = e.target.value;
               setSearchQuery(value);
@@ -67,7 +67,7 @@ export default function Page() {
             <input
               type="number"
               placeholder="Min price"
-              className="p-3 w-full rounded-none sm:rounded-l bg-gray-900"
+              className="p-3 w-full rounded-none bg-gray-900"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
             />

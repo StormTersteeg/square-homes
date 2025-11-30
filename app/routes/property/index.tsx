@@ -20,7 +20,7 @@ export default function Page() {
 
   if (!listingId) {
     return (
-      <div className="container h-[calc(100vh-10rem)] flex mx-auto mt-26 pb-5">
+      <div className="container h-[calc(100dvh-10rem)] flex mx-auto mt-26 pb-5">
         <CgSearchLoading className="text-8xl" />
         <div className="mt-6 ml-5">
           Could not find that property, view our other properties instead.

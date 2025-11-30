@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { PointerEvent } from "react";
 import { CgChevronLeft, CgChevronRight } from "react-icons/cg";
 
 interface CarouselProps {
@@ -8,6 +9,8 @@ interface CarouselProps {
 export default function Carousel({ images }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [hasDragged, setHasDragged] = useState(false);
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
@@ -25,17 +28,47 @@ export default function Carousel({ images }: CarouselProps) {
     setCurrentIndex(index);
   };
 
-  const toggleFullscreen = () => {
-    setIsFullscreen((prev) => !prev);
+  const openFullscreen = () => {
+    if (hasDragged) return;
+    setIsFullscreen(true);
+  };
+
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
+  };
+
+  const handlePointerDown = (event: PointerEvent<HTMLImageElement>) => {
+    setDragStartX(event.clientX);
+    setHasDragged(false);
+  };
+
+  const handlePointerMove = (event: PointerEvent<HTMLImageElement>) => {
+    if (Math.abs(event.clientX - dragStartX) > 10) {
+      setHasDragged(true);
+    }
+  };
+
+  const handlePointerUp = (event: PointerEvent<HTMLImageElement>) => {
+    const diff = event.clientX - dragStartX;
+    const threshold = 50;
+    if (diff > threshold) {
+      prevImage();
+    } else if (diff < -threshold) {
+      nextImage();
+    }
   };
 
   return (
-    <div className="relative bg-gray-800">
+    <div className="relative bg-gray-800 select-none">
       <img
         className="mx-auto w-full sm:w-4/5 h-auto cursor-zoom-in"
         src={`/${images[currentIndex]}`}
         alt={`Image ${currentIndex + 1}`}
-        onClick={toggleFullscreen}
+        onClick={openFullscreen}
+        draggable={false}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
       />
       <button
         className="absolute top-1/2 left-0 -translate-y-1/2 p-2 hover:opacity-100 opacity-50"
@@ -63,10 +96,10 @@ export default function Carousel({ images }: CarouselProps) {
       </div>
 
       {isFullscreen && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center backdrop-blur-lg">
           <button
             className="absolute top-4 right-4 px-3 py-1 rounded-md bg-gray-900 text-white text-sm hover:bg-gray-700"
-            onClick={toggleFullscreen}
+            onClick={closeFullscreen}
           >
             Close
           </button>
@@ -80,6 +113,10 @@ export default function Carousel({ images }: CarouselProps) {
             className="max-h-[90vh] max-w-[90vw] object-contain"
             src={`/${images[currentIndex]}`}
             alt={`Image ${currentIndex + 1}`}
+            draggable={false}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
           />
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:opacity-100 opacity-70"
