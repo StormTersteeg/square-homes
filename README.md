@@ -1,3 +1,5 @@
+<img width="1807" height="1039" alt="Screenshot 2025-12-24 at 11-39-35 " src="https://github.com/user-attachments/assets/eae7f98b-f02a-462d-a352-d1f649fe194b" />
+
 # Square Homes 🏡
 
 Square Homes is a modern React + TypeScript frontend example for a property listing website.  
