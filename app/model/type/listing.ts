@@ -1,4 +1,4 @@
-import type { Tag } from "~/component/tag";
+import type { Tag } from "./tag";
 
 export default interface Listing {
   id: string;

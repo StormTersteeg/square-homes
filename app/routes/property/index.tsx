@@ -1,31 +1,31 @@
 import { Link, useParams } from "react-router";
-import ListingStore from "~/store/listing";
+import listingStore from "~/store/listing";
 import FormatPrice from "~/util/price";
 import TagElement from "~/component/tag";
 import { CgSearchLoading } from "react-icons/cg";
 import Carousel from "~/component/carousel";
 
-export default function Page() {
-  const listingStore = new ListingStore();
-  const params = useParams();
-  const listingId = params.id;
-
-  if (!listingId) {
-    return (
-      <div className="container h-[calc(100dvh-10rem)] flex mx-auto mt-26 pb-5">
-        <CgSearchLoading className="text-8xl" />
-        <div className="mt-6 ml-5">
-          Could not find that property, view our other properties instead.
-          <br />
-          <Link to="/listings" className="text-blue-500 hover:underline">
-            View Listings
-          </Link>
-        </div>
+function ListingNotFound() {
+  return (
+    <div className="container h-[calc(100dvh-10rem)] flex mx-auto mt-26 pb-5">
+      <CgSearchLoading className="text-8xl" />
+      <div className="mt-6 ml-5">
+        Could not find that property, view our other properties instead.
+        <br />
+        <Link to="/listings" className="text-blue-500 hover:underline">
+          View Listings
+        </Link>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-  const listing = listingStore.get(listingId);
+export default function Page() {
+  const { id } = useParams();
+  if (!id) return <ListingNotFound />;
+
+  const listing = listingStore.get(id);
+  if (!listing) return <ListingNotFound />;
 
   return (
     <main>

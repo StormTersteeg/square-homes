@@ -64,6 +64,7 @@ export default function Carousel({ images }: CarouselProps) {
         className="mx-auto w-full sm:w-4/5 h-auto cursor-zoom-in"
         src={`/${images[currentIndex]}`}
         alt={`Image ${currentIndex + 1}`}
+        loading="lazy"
         onClick={openFullscreen}
         draggable={false}
         onPointerDown={handlePointerDown}
@@ -113,6 +114,7 @@ export default function Carousel({ images }: CarouselProps) {
             className="max-h-[90vh] max-w-[90vw] object-contain"
             src={`/${images[currentIndex]}`}
             alt={`Image ${currentIndex + 1}`}
+            loading="lazy"
             draggable={false}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}

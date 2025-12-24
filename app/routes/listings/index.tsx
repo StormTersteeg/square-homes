@@ -1,4 +1,4 @@
-import ListingStore from "~/store/listing";
+import listingStore from "~/store/listing";
 import ListingPreview from "~/component/listingPreview";
 import { useState, useMemo } from "react";
 import { useLocation } from "react-router";
@@ -24,7 +24,6 @@ function getOrder(orderType: NameId): (a: Listing, b: Listing) => number {
 
 export default function Page() {
   const location = useLocation();
-  const listingStore = useMemo(() => new ListingStore(), []);
   const listings = useMemo(() => listingStore.getAll(), [listingStore]);
   const params = new URLSearchParams(location.search);
 
@@ -103,7 +102,7 @@ export default function Page() {
         </div>
 
         {filteredListings.map((listing) => (
-          <ListingPreview key={listing.id} {...listing} />
+          <ListingPreview key={listing.id} listing={listing} />
         ))}
 
         {filteredListings.length === 0 && (

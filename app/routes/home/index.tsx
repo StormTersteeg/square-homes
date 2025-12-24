@@ -1,10 +1,9 @@
-import ListingStore from "~/store/listing";
+import listingStore from "~/store/listing";
 import ListingPreview from "~/component/listingPreview";
 import Steps from "~/component/steps";
 import { Link } from "react-router";
 
 export default function Page() {
-  const listingStore = new ListingStore();
   const randomListing =
     listingStore.getAll()[
       Math.floor(Math.random() * listingStore.getAll().length)
@@ -33,7 +32,7 @@ export default function Page() {
           <span className="h-px flex-1 bg-gray-300"></span>
         </span>
 
-        <ListingPreview {...randomListing} />
+        <ListingPreview listing={randomListing} />
 
         <div className="flex justify-center mt-10 space-x-4">
           <Link
