@@ -1,87 +1,36 @@
-# Welcome to React Router!
+# Square Homes 🏡
 
-A modern, production-ready template for building full-stack React applications using React Router.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+Square Homes is a modern React + TypeScript frontend example for a property listing website.  
+It demonstrates clean project structure, reusable components, typed models, and client-side routing in a realistic real-estate style app.
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Property listings and detail pages
+- Dynamic routing with React Router
+- Reusable UI components (carousel, tags, navbar, footer)
+- Typed domain models (Listing, Tags)
+- Simple in-memory store pattern
+- Utility helpers for formatting (price, strings)
+- Mock data for local development
+- Responsive, component-driven layout
 
-## Getting Started
+## Tech Stack
 
-### Installation
+- React
+- TypeScript
+- React Router
+- CSS / utility-first styling
+- Mock data (no backend required)
 
-Install the dependencies:
+## Project Structure
 
-```bash
-npm install
-```
+- `component/` – reusable UI components
+- `routes/` – page-level routes (home, listings, property, contact)
+- `store/` – simple data store abstraction
+- `model/` – typed domain models
+- `util/` – shared helpers
+- `mock/` – mock listing data
 
-### Development
+## Purpose
 
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+Square Homes is built as a **frontend example project** to showcase best practices in React component design, routing, and state handling for a real-world style application.
